@@ -1,0 +1,32 @@
+git push origin HEAD:refs/for/master
+
+git commit --amend --no-edit
+
+代码废弃之后的操作
+1.首先更新本地镜像的代码
+
+git fetch origin master
+
+
+
+2.执行reset命令将本地已经commit但尚未合并到远程仓库master分支的代码回滚到开发空间中
+
+git reset --soft origin/master
+
+注：因为加了--soft参数，因此修改的代码不会丢失，会从本地仓库回到尚未add的状态
+
+
+
+3.git status可以查看废弃的评审对应修改的代码，现在处于未提交的状态，确认代码没有问题进行下一步
+
+若代码有问题，请自行修改
+
+
+
+4.重新add>commit，再次push后，就会在icode上生成一张新的评审单。
+
+git add .
+
+git commit -m "some comments"
+
+git push origin HEAD:refs/for/master

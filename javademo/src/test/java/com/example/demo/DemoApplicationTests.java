@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.properties.User;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 // TDD 三定律
@@ -13,9 +15,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 // 测试可以拆分为三个环节: 构造测试数据, 操作测试数据, 检验操作是否达到期望结果
 @SpringBootTest
 class DemoApplicationTests {
-
+    @Autowired
+    User user;
     @Test
     void contextLoads() {
+        System.out.println(user);
     }
 
 }
