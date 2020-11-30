@@ -1,3 +1,12 @@
 user:
     username: root
     password: shj
+spring:
+    datasource:
+            url: jdbc:mysql://127.0.0.1:3306/shj_users?serverTimezone=GMT&useSSL=true
+            username: root
+            password: mysql
+            driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+    type-aliases-package: com.example.demo.entity
+    mapper-locations: classpath:com/example/demo/entity/mapper/*.xml
